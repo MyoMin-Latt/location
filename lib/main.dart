@@ -61,41 +61,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // Location location = Location();
-  // Location location1 = Location();
-  // LocationData? _locationData;
   LocationData? locationData;
   String latitude = '';
   String longitude = '';
-
-  // Future<LocationData?> getLocation() async {
-  //   bool? _serviceEnabled;
-  //   late PermissionStatus? permissionGranted;
-  //   _serviceEnabled = await location.serviceEnabled();
-  //   if (!_serviceEnabled!) {
-  //     _serviceEnabled = await location.requestService();
-  //     if (!_serviceEnabled!) {
-  //       return null;
-  //     }
-  //   }
-
-  //   permissionGranted = await location.hasPermission();
-  //   if (permissionGranted == PermissionStatus.denied) {
-  //     permissionGranted = await location.requestPermission();
-  //     if (permissionGranted != PermissionStatus.granted) {
-  //       return null;
-  //     }
-  //   }
-  //   _locationData = await location.getLocation();
-  //   print(_locationData);
-  //   return _locationData;
-  // }
-
-  @override
-  void initState() {
-    super.initState();
-    // getLocation();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +76,6 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Text(locationData == null ? 'latitude': locationData!.latitude),
             Text('Latitude : $latitude', style: const TextStyle(fontSize: 22)),
             const SizedBox(height: 10),
             Text('Longitude : $longitude',
@@ -143,10 +110,8 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // getLocation();
-        },
-        child: const Icon(Icons.location_on),
+        onPressed: () {},
+        child: const Icon(Icons.skip_next),
       ),
     );
   }
